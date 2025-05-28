@@ -3,6 +3,7 @@ center = {0,0}
 
 function init()
   animator.setAnimationState("movement", "idle")
+  center = config.getParameter("clockFaceCenter", {0,0})
   local currentDirection = object.direction() or 0
   local flipDirections = config.getParameter("flipClockHandsDirections") or {}
   for _, v in ipairs(flipDirections) do
@@ -10,7 +11,7 @@ function init()
 		clockHandDirection = 1
 	end
   end
-  center = config.getParameter("clockFaceCenter", {0,0})
+  
 end
 
 function update(dt)
