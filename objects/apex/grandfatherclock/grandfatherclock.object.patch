@@ -1,0 +1,111 @@
+[
+	[
+		{
+			"op" : "test",
+			"path" : "/scripts"
+		},
+		{
+			"op" : "add",
+			"path" : "/scripts/-",
+			"value" : "/scripts/clocks/clockhands.lua"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scripts",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/scripts",
+			"value" : ["/scripts/clocks/clockhands.lua"]
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animation"
+		},
+		{
+			"op" : "replace",
+			"path" : "/animation",
+			"value" : "/objects/apex/grandfatherclock/grandfatherclock.animation"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animation",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/animation",
+			"value" : "/objects/apex/grandfatherclock/grandfatherclock.animation"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animationParts"
+		},
+		{
+			"op" : "replace",
+			"path" : "/animationParts",
+			"value" : 
+			{
+				"clock" : "grandfatherclock.png",
+				"hour" : "hands.png",
+				"minute" : "hands.png"
+			}
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animationParts",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/animationParts",
+			"value" : 
+			{
+				"clock" : "grandfatherclock.png",
+				"hour" : "hands.png",
+				"minute" : "hands.png"
+			}
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scriptDelta"
+		},
+		{
+			"op" : "replace",
+			"path" : "/scriptDelta",
+			"value" : 5
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scriptDelta",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/scriptDelta",
+			"value" : 5
+		}
+	],
+	[
+		{
+			"op" : "replace",
+			"path" : "/orientations/0/dualImage",
+			"value" : "grandfatherclockpreview.png:<color>"
+		}
+	]
+]
