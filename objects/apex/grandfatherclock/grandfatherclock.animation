@@ -24,8 +24,8 @@
 			{
 				"properties" : 
 				{
-					"offset" : [0.375, 3.875],
-					"rotationGroup" : "hour",
+					"offset" : [0.3125, 3.875],
+					"transformationGroups" : ["hour"],
 					"centered" : true,
 					"zLevel" : 2
 				},
@@ -49,8 +49,8 @@
 			{
 				"properties" : 
 				{
-					"offset" : [0.375, 3.875],
-					"rotationGroup" : "minute",
+					"offset" : [0.3125, 3.875],
+					"transformationGroups" : ["minute"],
 					"centered" : true,
 					"zLevel" : 1
 				},
@@ -96,16 +96,16 @@
 		}
 	},
 
-	"rotationGroups" : 
+	"transformationGroups" : 
 	{
 		"hour" : 
 		{
-			"rotationCenter" : [0.375, 3.875],
+			"rotationCenter" : [0.3125, 3.875],
 			"angularVelocity" : 1.0
 		},
 		"minute" : 
 		{
-			"rotationCenter" : [0.375, 3.875],
+			"rotationCenter" : [0.3125, 3.875],
 			"angularVelocity" : 1.0
 		}
 	}

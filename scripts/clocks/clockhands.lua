@@ -1,5 +1,14 @@
+clockHandDirection = 1
+
 function init()
-  animator.setAnimationState("movement", "idle")
+  --  animator.setAnimationState("movement", "idle")
+  local currentDirection = object.direction() or 0
+  local flipDirections = config.getParameter("flipClockHandsDirections") or {}
+  for k, v in pairs(flipDirections) do
+	if currentDirection == k then
+		clockHandDirection = -1
+	end
+  end
 end
 
 function update(dt)
@@ -11,13 +20,18 @@ function update(dt)
   local hour = (math.floor(seconds / 3600) % 12) + 1
   local minute = (math.floor(seconds / 60) % 60)
   
-  local hourAngle = ((math.pi * 2) / 12) * hour * -1
-  local minuteAngle = ((math.pi * 2) / 60) * minute * -1
+  local hourAngle = ((math.pi * 2) / 12) * hour
+  local minuteAngle = ((math.pi * 2) / 60) * minute
   
   --adjust hour hand in small increments between hours as minute hand increments
   local ittybitty = minuteAngle / 12
   hourAngle = hourAngle + ittybitty
   
-  animator.rotateGroup("hour", hourAngle)
-  animator.rotateGroup("minute", minuteAngle)
+  local desiredHourAngle = hourAngle * clockHandDirection
+  local desiredMinuteAngle = minuteAngle * clockHandDirection
+  
+  animator.resetTransformationGroup("hour")
+  animator.rotateTransformationGroup("hour", desiredHourAngle, {0.3125, 3.875})
+  animator.resetTransformationGroup("minute")
+  animator.rotateTransformationGroup("minute", desiredMinuteAngle, {0.3125, 3.875})
 end
