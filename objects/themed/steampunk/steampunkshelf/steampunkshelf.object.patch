@@ -1,0 +1,129 @@
+[
+	[
+		{
+			"op" : "test",
+			"path" : "/scripts"
+		},
+		{
+			"op" : "add",
+			"path" : "/scripts/-",
+			"value" : "/scripts/clocks/clockhands.lua"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scripts",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/scripts",
+			"value" : ["/scripts/clocks/clockhands.lua"]
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animation"
+		},
+		{
+			"op" : "replace",
+			"path" : "/animation",
+			"value" : "/objects/themed/steampunk/steampunkshelf/steampunkshelf.animation"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animation",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/animation",
+			"value" : "/objects/themed/steampunk/steampunkshelf/steampunkshelf.animation"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scriptDelta"
+		},
+		{
+			"op" : "replace",
+			"path" : "/scriptDelta",
+			"value" : 5
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scriptDelta",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/scriptDelta",
+			"value" : 5
+		}
+	],
+	[
+		{
+			"op" : "add",
+			"path" : "/flipClockHandsDirections",
+			"value" : [ -1 ]
+		},
+		{
+			"op" : "add",
+			"path" : "/clockFaceCenter",
+			"value" : [0.3125, 6.0625]
+		}
+	],
+	[
+		{
+			"op" : "replace",
+			"path" : "/orientations",
+			"value" : 
+			[
+				{
+					"image" : "steampunkshelfpreview.png",
+					"imagePosition" : [-24, 0],
+					"frames" : 1,
+					"animationCycle" : 1.0,
+
+					"spaceScan" : 0.1,
+					"anchors" : [ "background" ],
+					"direction" : "right",
+					
+					"animationParts" : 
+					{
+						"clock" : "steampunkshelf.png",
+						"hour" : "hands.png",
+						"minute" : "hands.png"
+					}
+				},
+				{
+					"image" : "steampunkshelfpreview.png",
+					
+					"animationPosition" : [0,0],
+					"imagePosition" : [-23, 0],
+					"flipImages" : true,
+					"frames" : 1,
+					"animationCycle" : 1.0,
+
+					"spaceScan" : 0.1,
+					"anchors" : [ "background" ],
+					"direction" : "left",
+					
+					"animationParts" : 
+					{
+						"clock" : "steampunkshelfreversed.png",
+						"hour" : "hands.png",
+						"minute" : "hands.png"
+					}
+				}
+			]
+		}
+	]
+]
