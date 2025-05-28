@@ -1,0 +1,146 @@
+[
+	[
+		{
+			"op" : "test",
+			"path" : "/scripts"
+		},
+		{
+			"op" : "add",
+			"path" : "/scripts/-",
+			"value" : "/scripts/clocks/clockhands.lua"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scripts",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/scripts",
+			"value" : ["/scripts/clocks/clockhands.lua"]
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animation"
+		},
+		{
+			"op" : "replace",
+			"path" : "/animation",
+			"value" : "/objects/glitch/medievalclock/medievalclock.animation"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animation",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/animation",
+			"value" : "/objects/glitch/medievalclock/medievalclock.animation"
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animationParts"
+		},
+		{
+			"op" : "replace",
+			"path" : "/animationParts",
+			"value" : 
+			{
+				"clock" : "medievalclock.png",
+				"hour" : "hands.png",
+				"minute" : "hands.png"
+			}
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/animationParts",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/animationParts",
+			"value" : 
+			{
+				"clock" : "medievalclock.png",
+				"hour" : "hands.png",
+				"minute" : "hands.png"
+			}
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scriptDelta"
+		},
+		{
+			"op" : "replace",
+			"path" : "/scriptDelta",
+			"value" : 5
+		}
+	],
+	[
+		{
+			"op" : "test",
+			"path" : "/scriptDelta",
+			"inverse" : true
+		},
+		{
+			"op" : "add",
+			"path" : "/scriptDelta",
+			"value" : 5
+		}
+	],
+	[
+		{
+			"op" : "add",
+			"path" : "/flipClockHandsDirections",
+			"value" : [ -1 ]
+		},
+		{
+			"op" : "add",
+			"path" : "/clockFaceCenter",
+			"value" : [0.0625, 0.9375]
+		}
+	],
+	[
+		{
+			"op" : "replace",
+			"path" : "/orientations",
+			"value" : 
+			[
+				{
+					"image" : "medievalclockpreview.png",
+					"imagePosition" : [-8, -8],
+					"frames" : 1,
+					"animationCycle" : 1.0,
+
+					"spaceScan" : 0.1,
+					"anchors" : [ "background" ],
+					"direction" : "right"
+				},
+				{
+					"image" : "medievalclockpreview.png",
+					"imagePosition" : [-8, -8],
+					"flipImages" : true,
+					"frames" : 1,
+					"animationCycle" : 1.0,
+
+					"spaceScan" : 0.1,
+					"anchors" : [ "background" ],
+					"direction" : "left"
+				}
+			]
+		}
+	]
+]
