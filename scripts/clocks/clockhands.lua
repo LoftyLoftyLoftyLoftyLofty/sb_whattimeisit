@@ -1,20 +1,22 @@
-clockHandDirection = 1
+clockHandDirection = -1
+center = {0,0}
 
 function init()
-  --  animator.setAnimationState("movement", "idle")
+  animator.setAnimationState("movement", "idle")
   local currentDirection = object.direction() or 0
   local flipDirections = config.getParameter("flipClockHandsDirections") or {}
-  for k, v in pairs(flipDirections) do
-	if currentDirection == k then
-		clockHandDirection = -1
+  for _, v in ipairs(flipDirections) do
+	if currentDirection == v then
+		clockHandDirection = 1
 	end
   end
+  center = config.getParameter("clockFaceCenter", {0,0})
 end
 
 function update(dt)
   
   --testing
-  --local seconds = (os.time{year=2000, month=1, day=1, hour=6, sec=0}) % 86400
+  --local seconds = (os.time{year=2000, month=1, day=1, hour=5, sec=0}) % 86400
   
   local seconds = (os.time() - os.time{year=2000, month=1, day=1, hour=0, sec=0}) % 86400
   local hour = (math.floor(seconds / 3600) % 12) + 1
@@ -31,7 +33,9 @@ function update(dt)
   local desiredMinuteAngle = minuteAngle * clockHandDirection
   
   animator.resetTransformationGroup("hour")
-  animator.rotateTransformationGroup("hour", desiredHourAngle, {0.3125, 3.875})
+  animator.translateTransformationGroup("hour", center)
+  animator.rotateTransformationGroup("hour", desiredHourAngle, center)
   animator.resetTransformationGroup("minute")
-  animator.rotateTransformationGroup("minute", desiredMinuteAngle, {0.3125, 3.875})
+  animator.translateTransformationGroup("minute", center)
+  animator.rotateTransformationGroup("minute", desiredMinuteAngle, center)
 end
