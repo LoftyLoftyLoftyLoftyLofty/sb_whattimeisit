@@ -110,7 +110,7 @@
 		{
 			"op" : "add",
 			"path" : "/clockFaceCenter",
-			"value" : [0.3125, 3.875]
+			"value" : [0.3125, 3.8125]
 		}
 	],
 	[
